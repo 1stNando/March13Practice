@@ -62,6 +62,28 @@ namespace March13Practice
                 Console.WriteLine("{0}", student.First);
             }
 
+            var query3 =
+                from student in students
+                where student.Scores[1] > 95
+                select student;
+
+            Console.WriteLine("\nHere is the third round of queries. ");
+            foreach (Student student in query3)
+            {
+                Console.WriteLine("{0}", student.First);
+            }
+            Console.WriteLine("\n");
+            var query4 =
+                from student in students
+                where student.Last[0] == 'M'
+                select student;
+
+            Console.WriteLine("4th query coming up: ");
+            foreach (Student student in query4)
+            {
+                Console.WriteLine("{0}", student.Last);
+            }
+
         }
     }
 }
